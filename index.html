@@ -17,7 +17,7 @@
         var pdfjsLib = window['pdfjs-dist/build/pdf'];
 
         // Asynchronous download of PDF
-        var loadingTask = pdfjsLib.getDocument('your-pdf-url-here');
+        var loadingTask = pdfjsLib.getDocument('https://github.com/MohammedKAlmutairi/UCB_Poster/raw/main/Almutairi_COSE_Poster%20.pdf');
         loadingTask.promise.then(function(pdf) {
             console.log('PDF loaded');
             
