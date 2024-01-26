@@ -1,43 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PDF Viewer</title>
+    <title>PDF Viewer</title>
 </head>
 <body>
-  <canvas id="pdf-canvas"></canvas>
-  <script src="pdfjs/pdf.mjs"></script>
-  <script>
-    // Load the PDF file
-    var url = 'https://github.com/MohammedKAlmutairi/UCB_Poster/raw/main/Almutairi_COSE_Poster%20.pdf';
+    <p>Loading PDF...</p>
+<iframe src="https://viewscreen.githubusercontent.com/view/pdf?browser=safari&amp;bypass_fastly=true&amp;color_mode=auto&amp;commit=61bd22fee08b07dc9a781419171626057cca586e&amp;device=unknown_device&amp;docs_host=https%3A%2F%2Fdocs.github.com&amp;enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f4d6f68616d6d65644b416c6d7574616972692f5543425f506f737465722f363162643232666565303862303764633961373831343139313731363236303537636361353836652f416c6d7574616972695f434f53455f506f737465722532302e706466&amp;logged_in=true&amp;nwo=MohammedKAlmutairi%2FUCB_Poster&amp;path=Almutairi_COSE_Poster+.pdf&amp;platform=mac&amp;repository_id=748476727&amp;repository_type=Repository&amp;version=16#919d77df-d222-4642-bddd-9cf99b172ebd" sandbox="allow-scripts allow-same-origin allow-top-navigation" name="919d77df-d222-4642-bddd-9cf99b172ebd" title="File display" class="Box-sc-g0xbh4-0 kRMcOk">Viewer requires iframe.</iframe>
 
-    // Disable workers to avoid yet another cross-origin issue (workers need the URL of the script to be loaded, and dynamically loading a cross-origin script does not work)
-    PDFJS.disableWorker = true;
 
-    // The workerSrc property shall be specified.
-    PDFJS.workerSrc = 'pdfjs/pdf.worker.mjs';
-
-    // Asynchronous download PDF
-    PDFJS.getDocument(url)
-      .then(function getPdfHelloWorld(pdf) {
-        // Fetch the first page
-        pdf.getPage(1).then(function getPageHelloWorld(page) {
-          var scale = 1.5;
-          var viewport = page.getViewport(scale);
-
-          // Prepare canvas using PDF page dimensions
-          var canvas = document.getElementById('pdf-canvas');
-          var context = canvas.getContext('2d');
-          canvas.height = viewport.height;
-          canvas.width = viewport.width;
-
-          // Render PDF page into canvas context
-          var renderContext = {
-            canvasContext: context,
-            viewport: viewport
-          };
-          page.render(renderContext);
-        });
-      });
-  </script>
 </body>
 </html>
