@@ -5,16 +5,13 @@
 </head>
 <body>
     <canvas id="pdf-canvas"></canvas>
-    <script src="pdfjs/pdf.js"></script>
+    <script src="pdf.js"></script>
     <script>
         // Initialize PDFJS
         var pdfjsLib = window['pdfjs-dist/build/pdf'];
 
         // The workerSrc property shall be specified.
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs/pdf.worker.js';
-
-        // Loaded via <script> tag, create shortcut to access PDF.js exports.
-        var pdfjsLib = window['pdfjs-dist/build/pdf'];
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdf.worker.js';
 
         // Asynchronous download of PDF
         var loadingTask = pdfjsLib.getDocument('https://github.com/MohammedKAlmutairi/UCB_Poster/raw/main/Almutairi_COSE_Poster%20.pdf');
